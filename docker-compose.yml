@@ -1,0 +1,25 @@
+---
+version: '3.7'
+
+networks:
+  xes-platform-network:
+    name: xes-platform-network
+
+services:
+  node-proof-of-existence:
+    image: proxeus/node-proof-of-existence:latest
+    container_name: xes-proof-of-existence
+    networks:
+      - xes-platform-network
+    restart: unless-stopped
+    environment:
+      PROXEUS_INSTANCE_URL: ${PROXEUS_INSTANCE_URL}
+      SERVICE_NAME: ${SERVICE_NAME}
+      SERVICE_SECRET: ${SERVICE_SECRET}
+      SERVICE_PORT: 8014
+      SERVICE_URL: http://node-balance-retriever:8014
+      TWITTER_CONSUMER_KEY: ${TWITTER_CONSUMER_KEY}
+      TWITTER_CONSUMER_SECRET: ${TWITTER_CONSUMER_SECRET}
+      TZ: Europe/Zurich
+    ports:
+      - "8014:8014"
