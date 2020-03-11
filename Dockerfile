@@ -1,6 +1,6 @@
 FROM golang:1.13
 
 WORKDIR /app
-COPY ./main .
+COPY ./artifacts/node-proof-of-existence .
 
-CMD ["./main"]
+CMD ["./node-proof-of-existence"]

@@ -7,9 +7,9 @@ Current implementation only supports Twitter posts.
 
 ## Usage
 
-We suggest to start it using docker.
+It is recommended to start it using docker.
 
-Our latest image is available at `proxeus/node-proof-of-existence:latest`
+The latest image is available at `proxeus/node-proof-of-existence:latest`
 
 See the configuration paragraph for more information on what environments variables can be overridden
 
